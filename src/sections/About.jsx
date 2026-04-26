@@ -20,8 +20,8 @@ const About = () => {
           <div className="z-10">
             <p className="headtext">Hi, I'm Nguyen Le Duy</p>
             <p className="subtext">
-              I am still a third-year student at HCMUT, I love developing my
-              frontend and backend development skills to deliver dynamic and
+              I'm a third-year student at HCMUT, passionate about developing my
+              frontend and backend skills to build dynamic and responsive
               software and web applications.
             </p>
           </div>
@@ -51,8 +51,10 @@ const About = () => {
         {/* Grid 3 */}
         <div className="grid-black-color grid-3 relative">
           <div className="z-10 w-[50%] md:w-auto">
-            <p className="headtext">Time Zone</p>
+            <p className="headtext">Location & Timezone</p>
             <p className="subtext">
+              Based in Vietnam (UTC+7)<br />
+              Available for remote collaboration worldwide
             </p>
           </div>
           <figure className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full flex items-center md:right-auto md:left-[30%] md:top-[10%] md:w-auto md:h-auto">
@@ -76,7 +78,7 @@ const About = () => {
             <p className="headtext">Tech Stack</p>
             <p className="subtext">
               I specialize in a variety of languages, frameworks, and tools that
-              allow me to build robust and scalable applications
+              allow me to build robust and scalable applications.
             </p>
           </div>
           <div className="absolute inset-0 flex items-center justify-center md:inset-y-9 md:start-[50%] md:w-full md:h-full md:scale-125">
