@@ -265,7 +265,7 @@ export const reviews = [
   {
     name: "Love Me",
     username: "@LilWayne @Drake @Future",
-    body: "Uh, with no makeup, she a ten and she the best with that head even better than Karrine",
+    body: "With no makeup, she a ten and she the best with that head.",
     img: "assets\\avatar\\loveme.jpg",
   },
   {
