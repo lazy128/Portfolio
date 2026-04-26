@@ -8,18 +8,21 @@ import Testimonial from "./sections/Testimonial";
 import Contact from "./sections/Contact";
 import Footer from './sections/Footer';
 
+// App.jsx
 const App = () => {
   return (
-    <div className="container mx-auto max-w-7xl">
+    <main className="w-full overflow-x-hidden">
       <Navbar />
       <Hero />
-      <About />
-      <Projects />
-      <Experiences />
-      <Testimonial />
-      <Contact />
-      <Footer/>
-    </div>
+      <div className="container mx-auto max-w-7xl">
+        <About />
+        <Projects />
+        <Experiences />
+        <Testimonial />
+        <Contact />
+        <Footer />
+      </div>
+    </main>
   );
 };
 
