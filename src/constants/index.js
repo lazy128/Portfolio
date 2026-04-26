@@ -271,7 +271,7 @@ export const reviews = [
   {
     name: "Passionfruit",
     username: "@Drake",
-    body: "ListenListenSeein' you got ritualistic Cleansin' my soul of addiction for now 'Cause I'm fallin' apart, yeah",
+    body: "Listen Seein' you got ritualistic Cleansin' my soul of addiction for now 'Cause I'm fallin' apart, yeah",
     img: "assets\\avatar\\Morelife.webp",
     spotifyId: "5mCPDVBb16L4XQwDdbRUpz",
   },
