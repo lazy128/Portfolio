@@ -48,20 +48,19 @@ const About = () => {
   </div>
 </div>
 
-        {/* Grid 3 */}
-        <div className="grid-black-color grid-3 relative">
-          <div className="z-10 w-[50%] md:w-auto">
-            <p className="headtext">Location & Timezone</p>
-            <p className="subtext">
-              Based in Vietnam (UTC+7)<br />
-              Available for remote collaboration worldwide
-            </p>
-          </div>
-          <figure className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full flex items-center md:right-auto md:left-[30%] md:top-[10%] md:w-auto md:h-auto">
-            <Globe />
-          </figure>
-        </div>
-
+{/* Grid 3 */}
+<div className="grid-black-color grid-3 relative overflow-hidden">
+  <div className="z-10 w-[50%]">
+    <p className="headtext">Location & Timezone</p>
+    <p className="subtext">
+      Based in Vietnam (UTC+7)<br />
+      Available for remote collaboration worldwide
+    </p>
+  </div>
+  <figure className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-[55%] h-full flex items-center">
+    <Globe />
+  </figure>
+</div>
         {/* Grid 4 */}
         <div className="grid-special-color grid-4">
           <div className="flex flex-col items-center justify-center gap-4 size-full">
