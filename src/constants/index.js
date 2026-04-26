@@ -229,12 +229,14 @@ export const reviews = [
     username: "@Drake",
     body: "I'll probably self-destruct if I ever lose,but I never do",
     img: "assets\\avatar\\Morelife.webp",
+    spotifyId: "2KvHC9z14GSl4YpkNMX384",  
   },
   {
     name: "Successful(feat. Trey Songz& Lil Wayne)",
     username: "@Drake @Trey Songz @Lil Wayne",
     body: "The game need change and I'm the motherfuckin' cashier",
     img: "assets\\avatar\\successful.png",
+    spotifyId: "6NwhtCYkfwWlcR62Ac4E7y",
   },
   {
     name: "The Violet Color",
@@ -248,12 +250,14 @@ export const reviews = [
     username: "@Drake",
     body: "Only Thing really worth chasing is a dream",
     img: "assets\\avatar\\hours in silence.webp",
+    spotifyId: "0sSRLXxknVTQDStgU1NqpY",
   },
   {
     name: "I Do This",
     username: "@NisseyHussle @YoungThug @Mozzy",
     body: "See,the best teacher in life is your own experience",
     img: "assets\\avatar\\idothis.webp",
+    spotifyId: "1AhSn0PZTgHJkJbu8p2Cjv",
   },
   {
     name: "Flashing Lights",
@@ -267,6 +271,7 @@ export const reviews = [
     username: "@LilWayne @Drake @Future",
     body: "With no makeup, she a ten and she the best with that head.",
     img: "assets\\avatar\\loveme.jpg",
+    spotifyId: "2XHzzp1j4IfTNp1FTn7YFg",
   },
   {
     name: "Passionfruit",
