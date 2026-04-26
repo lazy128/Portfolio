@@ -181,7 +181,7 @@ export const experiences = [
   {
     title: "Full-Stack Developer",
     job: "Dự án LMS - Hệ thống quản lý học tập",
-    date: "2025 - Hiện tại",
+    date: "2025",
     contents: [
       "Phát triển nền tảng LMS (Learning Management System) với đầy đủ chức năng quản lý sinh viên, giáo viên và khóa học.",
       "Xây dựng backend API với Node.js/Express và database MySQL/PostgreSQL.",
