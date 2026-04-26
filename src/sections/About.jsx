@@ -20,75 +20,46 @@ const About = () => {
           <div className="z-10">
             <p className="headtext">Hi, I'm Nguyen Le Duy</p>
             <p className="subtext">
-              I am still a third-year student at HCMUT, I love developing my frontend and backend development
-              skills to deliver dynamic and software and web applications.
+              I am still a third-year student at HCMUT, I love developing my
+              frontend and backend development skills to deliver dynamic and
+              software and web applications.
             </p>
           </div>
           <div className="absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo to-transparent" />
         </div>
-        {/* Grid 2 */}
-        <div className="grid-default-color grid-2">
-          <div
-            ref={grid2Container}
-            className="flex items-center justify-center w-full h-full"
-          >
-            <p className="flex items-end text-5xl text-gray-500">
-              Slangs I Use
-            </p>
-            <Card
-              style={{ rotate: "75deg", top: "30%", left: "20%" }}
-              text="OOP"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "-30deg", top: "60%", left: "45%" }}
-              text="NestJs"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "90deg", bottom: "30%", left: "70%" }}
-              text="Design Patterns"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "-45deg", top: "55%", left: "0%" }}
-              text="Design Principles"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "20deg", top: "10%", left: "38%" }}
-              text="Clean Code"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "30deg", top: "70%", left: "70%" }}
-              image="assets/logos/csharp-pink.png"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "-45deg", top: "70%", left: "25%" }}
-              image="assets/logos/dotnet-pink.png"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "-45deg", top: "5%", left: "10%" }}
-              image="assets/logos/blazor-pink.png"
-              containerRef={grid2Container}
-            />
-          </div>
-        </div>
+
+        {/* Grid 2 — Spline Keyboard */}
+<div className="grid-default-color grid-2 relative overflow-hidden">
+  {/* Label */}
+  <p className="absolute top-4 left-4 z-10 headtext">My Tools & Hobbies</p>
+  
+  {/* Spline — thu nhỏ và căn giữa */}
+  <div className="absolute inset-0 flex items-center justify-center scale-[0.75]">
+    <iframe
+      src="https://my.spline.design/keyboard-HdGY284uGO0iqGqvCQlBGiPu/"
+      frameBorder="0"
+      style={{
+        width: "100%",
+        height: "100%",
+        border: "none",
+        display: "block",
+      }}
+    />
+  </div>
+</div>
+
         {/* Grid 3 */}
         <div className="grid-black-color grid-3 relative">
           <div className="z-10 w-[50%] md:w-auto">
             <p className="headtext">Time Zone</p>
             <p className="subtext">
-              I'm based in Mars, and open to remote work worldwide
             </p>
           </div>
           <figure className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full flex items-center md:right-auto md:left-[30%] md:top-[10%] md:w-auto md:h-auto">
             <Globe />
           </figure>
         </div>
+
         {/* Grid 4 */}
         <div className="grid-special-color grid-4">
           <div className="flex flex-col items-center justify-center gap-4 size-full">
@@ -98,6 +69,7 @@ const About = () => {
             <CopyEmailButton />
           </div>
         </div>
+
         {/* Grid 5 */}
         <div className="grid-default-color grid-5 relative">
           <div className="z-10 w-[50%] md:w-auto">
