@@ -170,10 +170,10 @@ export const mySocials = [
 export const experiences = [
   {
     title: "Sinh viên CNTT",
-    job: "Đại học Bách Khoa (Nhật Bản)",
+    job: "Đại học Bách Khoa TP.HCM",
     date: "2023 - Hiện tại",
     contents: [
-      "Đang học năm 3, sắp lên năm 4 chuyên ngành Công nghệ Thông tin tại Đại học Bách Khoa Hà Nội với chương trình đào tạo bằng tiếng Nhật.",
+      "Đang học năm 3, sắp lên năm 4 chuyên ngành Công nghệ Thông tin tại Đại học Bách Khoa TP.HCM với chương trình định hướng Nhật Bản.",
       "Chuyên sâu về phát triển web full-stack với React, Node.js, và các framework hiện đại.",
       "Không ngừng học hỏi và áp dụng công nghệ mới vào các dự án thực tế.",
     ],
