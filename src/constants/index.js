@@ -115,7 +115,7 @@ export const experiences = [
     ],
   },
   {
-    title: "Full-Stack Developer",
+    title: "Backend Developer",
     job: "LMS - Learning Management System Project",
     date: "2025",
     contents: [
@@ -137,7 +137,7 @@ export const experiences = [
     ],
   },
   {
-    title: "Full-Stack Developer",
+    title: "Backend Developer",
     job: "Kinematics Calculator & Cost Optimization Tool",
     date: "2026",
     contents: [
