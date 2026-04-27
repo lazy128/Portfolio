@@ -28,39 +28,37 @@ const About = () => {
           <div className="absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo to-transparent" />
         </div>
 
-        {/* Grid 2 — Spline Keyboard */}
+       {/* Grid 2 */}
 <div className="grid-default-color grid-2 relative overflow-hidden">
-  {/* Label */}
   <p className="absolute top-4 left-4 z-10 headtext">My Tools & Hobbies</p>
-  
-  {/* Spline — thu nhỏ và căn giữa */}
-  <div className="absolute inset-0 flex items-center justify-center scale-[0.75]">
+
+  <div style={{
+    position: "absolute",
+    inset: 0,
+    bottom: "-25%",  // ← watermark bị đẩy xuống dưới card
+  }}>
     <iframe
       src="https://my.spline.design/keyboard-HdGY284uGO0iqGqvCQlBGiPu/"
       frameBorder="0"
-      style={{
-        width: "100%",
-        height: "100%",
-        border: "none",
-        display: "block",
-      }}
+      style={{ width: "100%", height: "100%", border: "none" }}
     />
   </div>
 </div>
 
-{/* Grid 3 */}
-<div className="grid-black-color grid-3 relative overflow-hidden">
-  <div className="z-10 w-[50%]">
-    <p className="headtext">Location & Timezone</p>
-    <p className="subtext">
-      Based in Vietnam (UTC+7)<br />
-      Available for remote collaboration worldwide
-    </p>
-  </div>
-  <figure className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-[55%] h-full flex items-center">
-    <Globe />
-  </figure>
-</div>
+        {/* Grid 3 */}
+        <div className="grid-black-color grid-3 relative overflow-hidden">
+          <div className="z-10 w-[50%]">
+            <p className="headtext">Location & Timezone</p>
+            <p className="subtext">
+              Based in Vietnam (UTC+7)<br />
+              Available for remote collaboration worldwide
+            </p>
+          </div>
+          <figure className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-[55%] h-full flex items-center">
+            <Globe />
+          </figure>
+        </div>
+
         {/* Grid 4 */}
         <div className="grid-special-color grid-4">
           <div className="flex flex-col items-center justify-center gap-4 size-full">
