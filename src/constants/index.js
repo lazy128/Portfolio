@@ -75,7 +75,7 @@ export const myProjects = [
     ],
     href: "",
     logo: "",
-    image: "/assets/projects/elearning.jpg",
+    image: "/assets/projects/Screenshot 2026-06-01 231710.png",
     tags: [
       { id: 1, name: "React", path: "/assets/logos/react.svg" },
       { id: 2, name: "Node.js", path: "/assets/logos/javascript.svg" },

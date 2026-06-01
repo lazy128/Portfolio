@@ -1,21 +1,53 @@
-import { Canvas, useFrame } from "@react-three/fiber";
+import { useCallback, useState } from "react";
 import HeroText from "../components/HeroText";
 import ParallaxBackground from "../components/ParallaxBackground";
-import { useMediaQuery } from "react-responsive";
-import { Suspense } from "react";
+import PixelLoader from "../components/PixelLoader";
+
+const LOADER_FADE_MS = 900;
+const CONTENT_FADE_DELAY_MS = 350;
 
 const Hero = () => {
-  return (
-    <section id="home" className="relative flex items-start justify-center min-h-screen overflow-hidden c-space">
-      {/* Text — z cao nhất */}
-      <div className="relative z-20 w-full">
-        <HeroText />
-      </div>
+  const [loadProgress, setLoadProgress] = useState(0);
+  const [loaderMounted, setLoaderMounted] = useState(true);
+  const [loaderExiting, setLoaderExiting] = useState(false);
+  const [contentMounted, setContentMounted] = useState(false);
+  const [contentVisible, setContentVisible] = useState(false);
 
-      {/* Spline full màn hình + có tương tác */}
-      <ParallaxBackground />
+  const handleSceneReady = useCallback(() => {
+    setLoadProgress(100);
+    setLoaderExiting(true);
+    setContentMounted(true);
+
+    setTimeout(() => {
+      requestAnimationFrame(() => setContentVisible(true));
+    }, CONTENT_FADE_DELAY_MS);
+
+    setTimeout(() => setLoaderMounted(false), LOADER_FADE_MS);
+  }, []);
+
+  return (
+    <section id="home" className="relative flex items-start justify-center min-h-screen c-space">
+      {loaderMounted && (
+        <PixelLoader
+          exiting={loaderExiting}
+          progress={loadProgress}
+        />
+      )}
+
+      {contentMounted && (
+        <div
+          className={`hero-content ${contentVisible ? "hero-content--visible" : ""}`}
+        >
+          <HeroText />
+        </div>
+      )}
+
+      <ParallaxBackground
+        onProgress={setLoadProgress}
+        onSceneReady={handleSceneReady}
+      />
     </section>
   );
 };
 
-export default Hero;  
+export default Hero;

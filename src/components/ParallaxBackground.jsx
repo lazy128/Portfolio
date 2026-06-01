@@ -1,24 +1,65 @@
 import { useEffect, useRef } from "react";
-
 const OVERFLOW = 80; // px dư mỗi phía top + bottom
+const MIN_LOADER_MS = 2800;
+const LOAD_TIMEOUT_MS = 12000;
 
-const ParallaxBackground = () => {
+const ParallaxBackground = ({ onSceneReady, onProgress }) => {
   const iframeRef = useRef(null);
-  const placeholderRef = useRef(null);
+  const loadStartedAt = useRef(null);
+  const readyRef = useRef(false);
+  const onSceneReadyRef = useRef(onSceneReady);
+  const onProgressRef = useRef(onProgress);
+  const progressTimerRef = useRef(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (!iframeRef.current) return;
+    onSceneReadyRef.current = onSceneReady;
+    onProgressRef.current = onProgress;
+  }, [onSceneReady, onProgress]);
 
-      iframeRef.current.src =
-        "https://my.spline.design/particlenebula-Bsp4nusCfRN6c5bmgnZJVm0e/";
+  const finishLoading = () => {
+    if (readyRef.current) return;
+    readyRef.current = true;
+    if (progressTimerRef.current) clearInterval(progressTimerRef.current);
+    onProgressRef.current?.(100);
+    if (iframeRef.current) {
+      iframeRef.current.style.opacity = "1";
+    }
+    const elapsed = Date.now() - (loadStartedAt.current ?? Date.now());
+    const remaining = Math.max(400, MIN_LOADER_MS - elapsed);
+    setTimeout(() => onSceneReadyRef.current?.(), remaining);
+  };
+
+  useEffect(() => {
+    let cancelled = false;
+    onProgressRef.current?.(8);
+
+    progressTimerRef.current = setInterval(() => {
+      onProgressRef.current?.((prev) =>
+        prev >= 92 ? 92 : prev + 2 + Math.random() * 4
+      );
+    }, 120);
+
+    const startTimer = setTimeout(() => {
+      if (cancelled || !iframeRef.current) return;
+      loadStartedAt.current = Date.now();
 
       iframeRef.current.onload = () => {
-        iframeRef.current.style.opacity = "1";
-        if (placeholderRef.current) placeholderRef.current.style.opacity = "0";
+        if (!cancelled) finishLoading();
       };
-    }, 500);
-    return () => clearTimeout(timer);
+      iframeRef.current.src =
+        "https://my.spline.design/particlenebula-Bsp4nusCfRN6c5bmgnZJVm0e/";
+    }, 300);
+
+    const fallbackTimer = setTimeout(() => {
+      if (!cancelled) finishLoading();
+    }, LOAD_TIMEOUT_MS);
+
+    return () => {
+      cancelled = true;
+      if (progressTimerRef.current) clearInterval(progressTimerRef.current);
+      clearTimeout(startTimer);
+      clearTimeout(fallbackTimer);
+    };
   }, []);
 
   return (
@@ -35,20 +76,6 @@ const ParallaxBackground = () => {
         background: "#030412",
       }}
     >
-      {/* Placeholder */}
-      <div
-        ref={placeholderRef}
-        style={{
-          position: "absolute", inset: 0,
-          background:
-            "radial-gradient(ellipse at center, #2d1b69 0%, #0a0015 60%, #030412 100%)",
-          opacity: 1,
-          transition: "opacity 1.2s ease",
-          zIndex: 1,
-          pointerEvents: "none",
-        }}
-      />
-
       {/*
         ✅ Tà đạo:
         - height: 100% + 2×OVERFLOW  → iframe cao hơn container 160px
@@ -69,7 +96,7 @@ const ParallaxBackground = () => {
           transform: `translateY(-${OVERFLOW}px)`,
           border: "none",
           opacity: 0,
-          transition: "opacity 1.2s ease",
+          transition: "opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1)",
         }}
       />
     </section>
